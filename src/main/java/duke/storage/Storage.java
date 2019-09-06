@@ -34,6 +34,8 @@ public class Storage {
                 file.createNewFile();
             }
 
+            assert file.exists() : "File should exist by now.";
+
             FileWriter fw = new FileWriter(file);
 
             for (Task task : tasks) {

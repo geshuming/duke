@@ -62,6 +62,8 @@ public class Duke {
             output = e.getMessage();
         }
 
+        assert output != null : "Response string should not be null";
+
         return output;
     }
 }
