@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class Event extends Task {
-    public LocalDateTime at;
+    private LocalDateTime at;
     private static final DateTimeFormatter DATE_TIME_FORMAT = DateTimeFormatter.ofPattern("dd/MM/yyyy HHmm");
 
     public Event(String description, String at) {
@@ -15,6 +15,10 @@ public class Event extends Task {
     public Event(String description, String at, boolean isDone) {
         super(description, isDone);
         this.at = LocalDateTime.parse(at);
+    }
+
+    public LocalDateTime getAt() {
+        return at;
     }
 
     @Override

@@ -1,8 +1,8 @@
 package duke.task;
 
 public abstract class Task {
-    public String description;
-    public boolean isDone;
+    private String description;
+    private boolean isDone;
 
     public Task(String description) {
         this.description = description;
@@ -16,6 +16,10 @@ public abstract class Task {
 
     public String getDescription() {
         return description;
+    }
+
+    public boolean getIsDone() {
+        return isDone;
     }
 
     public String getStatusIcon() {

@@ -38,15 +38,15 @@ public class Storage {
 
             for (Task task : tasks) {
                 if (task instanceof Deadline) {
-                    String str = String.format("D|%d|%s|%s\n", task.isDone ? 1 : 0, task.description,
-                            ((Deadline) task).by);
+                    String str = String.format("D|%d|%s|%s\n", task.getIsDone() ? 1 : 0, task.getDescription(),
+                            ((Deadline) task).getBy());
                     fw.write(str);
                 } else if (task instanceof Event) {
-                    String str = String.format("E|%d|%s|%s\n", task.isDone ? 1 : 0, task.description,
-                            ((Event) task).at);
+                    String str = String.format("E|%d|%s|%s\n", task.getIsDone() ? 1 : 0, task.getDescription(),
+                            ((Event) task).getAt());
                     fw.write(str);
                 } else {
-                    String str = String.format("T|%d|%s\n", task.isDone ? 1 : 0, task.description);
+                    String str = String.format("T|%d|%s\n", task.getIsDone() ? 1 : 0, task.getDescription());
                     fw.write(str);
                 }
             }

@@ -125,7 +125,7 @@ public class Parser {
                         TaskList matchingTasks = new TaskList();
 
                         for (Task task : tasks) {
-                            if (task.description.matches(keyword)) {
+                            if (task.getDescription().matches(keyword)) {
                                 matchingTasks.add(task);
                             }
                         }
